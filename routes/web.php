@@ -32,3 +32,5 @@ Route::get('/orangtua', function(){
 Route::get('/nama', 'MyController@index');
 Route::get('/tampilan', 'MyController@tampilan');
 Route::get('/tampilmodel', 'MyController@tampilmodel');
+Route::auth();
+Route::resource('orangtua','OrangtuaController');

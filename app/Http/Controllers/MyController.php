@@ -12,7 +12,6 @@ class MyController extends Controller
     	$a = "Nama Saya Adalah <b>Imam Rizki Julian</b>";
     	return $a;
     }
-
     public function tampilan()
     {
     	return view('about');
@@ -21,6 +20,7 @@ class MyController extends Controller
     public function tampilmodel()
     {
     	$ortu = orangtua::all();
+        $anak = anak::all();
     	return view('about', compact('ortu', 'anak'));
     }
 }
