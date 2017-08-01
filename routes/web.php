@@ -34,3 +34,4 @@ Route::get('/tampilan', 'MyController@tampilan');
 Route::get('/tampilmodel', 'MyController@tampilmodel');
 Route::auth();
 Route::resource('orangtua','OrangtuaController');
+Route::resource('anak','AnakController');

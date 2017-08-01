@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<div class="container">
 <div class="row"> 
   <center><h1>Data Orang Tua</h1></center>
   <div class="panel panel-primary">
@@ -10,6 +11,7 @@
   <div class="panel-body">
   <table class="table">
     <thead>
+
       <tr>
               <th>Nama Ayah</th>
               <th>Nama Ibu</th>
@@ -26,7 +28,7 @@
               <td>{{$data->nama_ayah}}</td>
               <td>{{$data->nama_ibu}}</td>
               <td>{{$data->umur_ayah}}</td>
-              <td>{{$data->nama_umur}}</td>
+              <td>{{$data->umur_ibu}}</td>
               <td>{{$data->alamat}}</td>
               <td>
                 @foreach($data->anaks as $a)
@@ -40,6 +42,8 @@
               <input name ="_method" type="hidden" value="DELETE">
               <input name ="_token"  type="hidden" >
               <input class="btn btn-primary " type="submit" value="Delete">
+              <!-- CSRF berfungsi setiap CRUD data harus dibutuhkan -->
+              <!-- Perbedaan CSRF_TOKEN(mengubah inputan yang sudah ada) dengan CSRF_FIELD(membuat inputan baru)  -->
               {{csrf_field()}}
               </form>
           </td>
@@ -47,6 +51,7 @@
       @endforeach
     </tbody>
     </table>
+    </div>
     </div>
     </div>
     </div>
