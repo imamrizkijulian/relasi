@@ -2,9 +2,9 @@
 @section('content')
 <div class="container">
 <div class="row">
-        <center><h1>Data Orang Tua</h1></center>
+        <center><h1>Show Data Orang Tua</h1></center>
         <div class="panel panel-primary">
-        <div class="panel-heading">Data Orangtua
+        <div class="panel-heading">Show Data Orangtua
           <div class="panel-title pull-right">
           <a href="{{ URL::previous() }}">Kembali</a></div>
         </div>

@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 <div class="row">
-        <center><h1>Data Anak</h1></center>
+        <center><h1>Create Data Anak</h1></center>
         <div class="panel panel-primary">
         <div class="panel-heading">Data Anak
           <div class="panel-title pull-right">
