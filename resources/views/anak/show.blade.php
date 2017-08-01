@@ -20,12 +20,8 @@
 
           <div class="form-group">
             <label class="control-lable">Nama Orangtua</label>
-            <select class="form-control" name="o" readonly="">
-                @foreach($ortu as $data)
-              <option value="{{$data->id}}">{{$data->nama_ayah}} & {{$data->nama_ibu}}
-              </option>
-                @endforeach
-            </select>
+            <input class="form-control" type="text" name="o" readonly="" value="{{$anak->orangtua->nama_ayah}} & {{$anak->orangtua->nama_ibu}}">
+              
 
           <div class="form-group">
             <label class="control-lable">Umur</label>
