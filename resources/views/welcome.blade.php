@@ -85,6 +85,8 @@
                 <div class="links">
                     <a href="/orangtua"><b>Data Orangtua</b></a>
                     <a href="/anak"><b>Data Anak</b></a>
+                    <a href="/author"><b>Data Author</b></a>
+                    <a href="/book"><b>Data Books</b></a>
 
                 </div>
             </div>

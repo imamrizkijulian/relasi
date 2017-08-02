@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\anak;
-use App\orangtua;
-class AnakController extends Controller
+use App\Author;
+class AuthorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class AnakController extends Controller
      */
     public function index()
     {
-        $anak = anak::all();
-        return view('anak.index', compact('anak'));
+        $author = Author::with('books')->get();
+        return view('author.index', compact('author'));
     }
 
     /**
@@ -25,9 +24,7 @@ class AnakController extends Controller
      */
     public function create()
     {
-        // compact fungsinya adalah untuk memparsing data berdasarkan model yang di panggil
-        $ortu = orangtua::all();
-        return view('anak.create', compact('ortu'));
+        return view('author.create');
     }
 
     /**
@@ -38,13 +35,10 @@ class AnakController extends Controller
      */
     public function store(Request $request)
     {
-        $anak = new anak;
-        $anak->nama = $request->a;
-        $anak->orangtua_id = $request->o;
-        $anak->umur = $request->u;
-        $anak->alamat = $request->al;
-        $anak->save();
-        return redirect('anak');
+        $author = new Author;
+        $author->name = $request->a;
+        $author->save();
+        return redirect('author');
     }
 
     /**
@@ -55,9 +49,8 @@ class AnakController extends Controller
      */
     public function show($id)
     {
-        $anak = anak::findOrFail($id);
-        $ortu = orangtua::all();
-        return view('anak.show', compact('anak','ortu'));
+        $author = Author::findOrFail($id);
+        return view('author.show', compact('author'));
     }
 
     /**
@@ -68,9 +61,8 @@ class AnakController extends Controller
      */
     public function edit($id)
     {
-        $anak = anak::findOrFail($id);
-        $ortu = orangtua::all();
-        return view('anak.edit', compact('ortu','anak'));
+        $author = Author::findOrFail($id);
+        return view('author.edit', compact('author'));
     }
 
     /**
@@ -82,13 +74,10 @@ class AnakController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $anak = anak::findOrFail($id);
-        $anak->nama = $request->a;
-        $anak->orangtua_id = $request->o;
-        $anak->umur = $request->u;
-        $anak->alamat = $request->al;
-        $anak->save();
-        return redirect('anak');
+        $author = Author::findOrFail($id);
+        $author->name = $request->a;
+        $author->save();
+        return redirect('author');
     }
 
     /**
@@ -99,8 +88,8 @@ class AnakController extends Controller
      */
     public function destroy($id)
     {
-        $anak = anak::findOrFail($id);
-        $anak->delete();
-        return redirect('anak');
+        $author = Author::findOrFail($id);
+        $author->delete();
+        return redirect('author');
     }
 }
