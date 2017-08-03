@@ -45,8 +45,10 @@ class BookController extends Controller
 
         if ($request->hasFile('cover')) {
             $books = $request->file('cover');
+            // membuat/mengambil ekstensi dari image
             $extension = $books->getClientOriginalExtension();
             $filename = str_random(6). '.' . $extension;
+            //$destinationPath membuat sebuah tempat
             $destinationPath = public_path() .DIRECTORY_SEPARATOR . 'img';
             $books->move($destinationPath, $filename);
             $book->cover = $filename;

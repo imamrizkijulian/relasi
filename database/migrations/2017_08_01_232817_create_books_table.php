@@ -14,6 +14,7 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
+            // usigned tidak menerima nilai negatif dan nullable boleh kosong
             $table->increments('id');
             $table->string('title');
             $table->integer('author_id')->unsigned();
